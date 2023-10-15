@@ -1,0 +1,9 @@
+[user]
+	email = shepelevnikolay97@gmail.com
+	name = Nikolay Shepelev
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = cache
+[credential "https://dev.azure.com"]
+	useHttpPath = true
