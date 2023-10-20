@@ -1,0 +1,1 @@
+@hourly anacron -s -t ~/.anacron/etc/anacrontab -S ~/.anacron/spool

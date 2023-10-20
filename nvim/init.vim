@@ -345,8 +345,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'mattn/emmet-vim'
 " Make emmet activate on ,
-" let g:user_emmet_leader_key=','
-let g:user_emmet_leader_key='<C-T>'
+let g:user_emmet_leader_key=','
+" let g:user_emmet_leader_key='<C-T>'
 "imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " CoC.vim

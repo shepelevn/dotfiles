@@ -133,8 +133,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # export FCEDIT="nvim --noplugin"
-export VISUAL="nvim -u .vimrc"
-export FCEDIT="nvim - u .vimrc"
+export VISUAL="nvim -u ~/.vimrc"
+export FCEDIT="nvim - u ~/.vimrc"
 # export VISUAL="vim"
 
 export MANPAGER="pager --mouse"
