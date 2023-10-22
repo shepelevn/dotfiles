@@ -1,4 +1,14 @@
 {
+  "workspace.rootPatterns": [
+    ".git",
+    ".hg",
+    ".projections.json",
+    ".project_directory",
+    "node_modules",
+    "package.json",
+    "vendor"
+  ],
+
 "intelephense.environment.phpVersion": "8.2.0",
 "phpstan.level": "8",
 }

@@ -5,6 +5,8 @@
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
+MAILTO = shepelevnikolay97@gmail.com
+
 # These replace cron's entries
 # 1	5	cron.daily	run-parts --report /etc/cron.daily
 # 7	10	cron.weekly	run-parts --report /etc/cron.weekly

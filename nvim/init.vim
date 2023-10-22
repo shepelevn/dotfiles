@@ -345,8 +345,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'mattn/emmet-vim'
 " Make emmet activate on ,
-let g:user_emmet_leader_key=','
-" let g:user_emmet_leader_key='<C-T>'
+" let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key='<C-T>'
 "imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " CoC.vim
@@ -470,7 +470,7 @@ Plug 'preservim/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
 Plug 'airblade/vim-rooter'
-let g:rooter_patterns = ['.project_directory', '.git', 'node_modules', 'package.json']
+let g:rooter_patterns = ['.project_directory', '.git', 'node_modules', 'package.json', 'vendor']
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

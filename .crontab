@@ -1,1 +1,4 @@
-@hourly anacron -s -t ~/.anacron/etc/anacrontab -S ~/.anacron/spool
+MAILTO = shepelevnikolay97@gmail.com
+
+@hourly /usr/sbin/anacron -s -t ~/.anacron/etc/anacrontab -S ~/.anacron/spool
+@reboot /usr/sbin/anacron -s -t ~/.anacron/etc/anacrontab -S ~/.anacron/spool
