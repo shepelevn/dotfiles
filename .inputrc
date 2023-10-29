@@ -1,0 +1,11 @@
+# set keymap vi
+# set editing-mode vi
+# set bell-style visible
+
+set editing-mode vi
+set keymap vi
+set meta-flag on
+set input-meta on
+set convert-meta off
+set output-meta on
+set bell-style none

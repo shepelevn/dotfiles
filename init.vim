@@ -526,25 +526,6 @@ Plug 'preservim/vim-markdown'
 " Programming spell dictionary
 Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 
-" SQL
-" Plug 'tpope/vim-dispatch'
-" Plug 'tpope/vim-dadbod'
-
-" Layout
-Plug 'lyokha/vim-xkbswitch'
-let g:XkbSwitchEnabled = 1
-let g:XkbSwitchIMappings = ['ru']
-
-" Possible solution to problem when there is no DISPLAY
-
-" if $DISPLAY == "" 
-" 	let g:XkbSwitchEnabled = 0
-" else
-" 	let g:XkbSwitchEnabled = 1
-" 	let g:XkbSwitchLib = '~/.local/lib/libxkbswitch.so'
-" 	let g:XkbSwitchIMappings = ['ru']
-" endif 
-
 "------------------------------------------------------------
 " " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
