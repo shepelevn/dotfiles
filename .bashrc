@@ -138,3 +138,15 @@ export FCEDIT="nvim -u ~/.vimrc"
 # export VISUAL="vim"
 
 export MANPAGER="pager --mouse"
+
+export PATH="/home/kck/.local/bin:$PATH"
+
+# Messages at login
+cat ~/todo.txt
+echo
+
+cat ~/code/todo.txt
+
+alias mailtrap='sendria --db ~/temporary/mails.sqlite'
+# Node doesn't work with ipv6
+alias npm-ipv4="node --dns-result-order=ipv4first $(which npm)"

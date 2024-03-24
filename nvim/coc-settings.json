@@ -9,6 +9,9 @@
     "vendor"
   ],
 
-"intelephense.environment.phpVersion": "8.2.0",
+"intelephense.environment.phpVersion": "8.3.0",
+// "intelephense.environment.phpVersion": "7.4.33",
+"intelephense.diagnostics.undefinedFunctions": false,
+"intelephense.diagnostics.undefinedMethods": false,
 "phpstan.level": "max",
 }

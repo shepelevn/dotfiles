@@ -8,3 +8,4 @@ ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/.crontab ~/.crontab
 ln -s ~/.dotfiles/.anacron ~/
 ln -s ~/.dotfiles/.myclirc ~/.myclirc
+ln -s ~/.dotfiles/.psqlrc ~/.psqlrc

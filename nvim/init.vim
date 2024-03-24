@@ -306,8 +306,10 @@ set foldmethod=syntax "syntax highlighting items specify folds
 set foldcolumn=1 "defines 1 col at window left, to indicate folding  
 let g:javaScript_fold=1 "activate folding by JS syntax  
 " set foldlevelstart=99 "start file with all folds opened
-set foldlevelstart=2
-set foldlevel=3
+" set foldlevelstart=2
+set foldlevelstart=99
+" set foldlevel=3
+set foldlevel=99
 set foldnestmax=3
 
 highlight Folded guibg=black guifg=white
@@ -352,21 +354,20 @@ let g:user_emmet_leader_key='<C-T>'
 " CoC.vim
 " Git doesn't work for this one
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-""
+
 let g:coc_global_extensions = [
-      \ 'coc-tsserver',
       \ 'coc-json',
       \ 'coc-html',
       \ 'coc-css',
       \ 'coc-explorer',
       \ 'coc-calc', 
-      \ 'coc-phpls',
       \ 'coc-emmet',
       \ 'coc-tsserver',
       \ 'coc-eslint',
       \ 'coc-diagnostic',
       \ '@yaegassy/coc-phpstan',
       \ 'coc-markdownlint',
+      \ 'coc-phpls',
       \]
 
 " Not added
@@ -531,9 +532,9 @@ Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 " Plug 'tpope/vim-dadbod'
 
 " Layout
-Plug 'lyokha/vim-xkbswitch'
-let g:XkbSwitchEnabled = 1
-let g:XkbSwitchIMappings = ['ru']
+" Plug 'lyokha/vim-xkbswitch'
+" let g:XkbSwitchEnabled = 1
+" let g:XkbSwitchIMappings = ['ru']
 
 " Possible solution to problem when there is no DISPLAY
 
@@ -544,6 +545,8 @@ let g:XkbSwitchIMappings = ['ru']
 " 	let g:XkbSwitchLib = '~/.local/lib/libxkbswitch.so'
 " 	let g:XkbSwitchIMappings = ['ru']
 " endif 
+
+Plug 'tpope/vim-abolish'
 
 "------------------------------------------------------------
 " " List ends here. Plugins become visible to Vim after this call.
@@ -610,7 +613,7 @@ call neomake#configure#automake('nrwi', 500)
 " Turn off word wrap for Markdown
 autocmd FileType markdown  setlocal textwidth=0
 autocmd FileType markdown set nowrap
-let g:markdown_folding = 1
+let g:markdown_folding = 0
 let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_conceal=0
 let g:vim_markdown_conceal_code_blocks = 0
@@ -624,3 +627,8 @@ let g:vim_markdown_fenced_languages = ['py=python', 'js=javascript', 'bash=sh', 
 
 set spelllang=en,ru,programming
 autocmd FileType markdown setlocal spell
+
+augroup syntax_extensions
+  au!
+  autocmd BufNewFile,BufRead *.env.local  set syntax=sh
+augroup END
