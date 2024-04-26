@@ -150,3 +150,5 @@ cat ~/code/todo.txt
 alias mailtrap='sendria --db ~/temporary/mails.sqlite'
 # Node doesn't work with ipv6
 alias npm-ipv4="node --dns-result-order=ipv4first $(which npm)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

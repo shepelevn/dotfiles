@@ -547,6 +547,10 @@ Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 " endif 
 
 Plug 'tpope/vim-abolish'
+Plug 'Glench/Vim-Jinja2-Syntax'
+
+Plug 'dhruvasagar/vim-table-mode'
+let g:table_mode_corner='|'
 
 "------------------------------------------------------------
 " " List ends here. Plugins become visible to Vim after this call.
@@ -612,7 +616,7 @@ call neomake#configure#automake('nrwi', 500)
 " Markdown
 " Turn off word wrap for Markdown
 autocmd FileType markdown  setlocal textwidth=0
-autocmd FileType markdown set nowrap
+autocmd FileType markdown setlocal nowrap
 let g:markdown_folding = 0
 let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_conceal=0
