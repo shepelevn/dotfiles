@@ -12,4 +12,4 @@ The configuration files are inside `config` folder
 To install the files use script `create-links.sh`.
 
 If you need to remove previous links run `remove-links.sh`. Use this
-script carefully as it can **delete your own files**.
+script carefully as it can **delete your own symbolic links**.
