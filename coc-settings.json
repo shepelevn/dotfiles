@@ -14,4 +14,8 @@
   "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.diagnostics.undefinedMethods": false,
   "phpstan.level": "max",
+
+  "markdownlint.config": { 
+    "line_length": 90
+  }
 }

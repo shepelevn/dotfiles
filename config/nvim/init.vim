@@ -552,6 +552,14 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'dhruvasagar/vim-table-mode'
 let g:table_mode_corner='|'
 
+Plug 'rhysd/conflict-marker.vim'
+
+highlight ConflictMarkerBegin guibg=#2f7366
+highlight ConflictMarkerOurs guibg=#2e5049
+highlight ConflictMarkerTheirs guibg=#344f69
+highlight ConflictMarkerEnd guibg=#2f628e
+highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
+
 "------------------------------------------------------------
 " " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

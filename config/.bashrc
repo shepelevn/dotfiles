@@ -145,10 +145,16 @@ export PATH="/home/kck/.local/bin:$PATH"
 cat ~/todo.txt
 echo
 
-cat ~/code/todo.txt
+cat ~/code/TODO.md
 
 alias mailtrap='sendria --db ~/temporary/mails.sqlite'
 # Node doesn't work with ipv6
 alias npm-ipv4="node --dns-result-order=ipv4first $(which npm)"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
