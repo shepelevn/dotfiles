@@ -276,6 +276,8 @@ set browsedir=current
 
 " Enable switching to russian keyboard via CTRL-^
 set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
 
 " Enable some commands for russian layout
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
