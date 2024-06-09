@@ -2,6 +2,7 @@
 
 ln -s $PWD/config/.vimrc ~/.vimrc
 ln -s $PWD/config/.bashrc ~/.bashrc
+ln -s $PWD/config/.bashrc.d ~/.bashrc.d
 ln -s $PWD/config/.inputrc ~/.inputrc
 ln -s $PWD/config/.gitconfig ~/.gitconfig
 ln -s $PWD/config/nvim ~/.config/nvim

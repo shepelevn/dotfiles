@@ -28,27 +28,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# My config
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# neovim-qt alias
-alias nvqt='nvim-qt'
-
-# php-cs-fixer
-alias php-cs-fixer='/home/kck/utils/php-cs-fixer'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -69,27 +48,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-set -o vi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# export FCEDIT="nvim --noplugin"
-export VISUAL="nvim -u ~/.vimrc"
-export FCEDIT="nvim -u ~/.vimrc"
-# export VISUAL="vim"
-
-export MANPAGER="pager --mouse"
-
-export PATH="/home/kck/.local/bin:$PATH"
-
-# Messages at login
-cat ~/todo.txt
-echo
-
-cat ~/code/TODO.md
-
-alias mailtrap='sendria --db ~/temporary/mails.sqlite'
-# Node doesn't work with ipv6
-alias npm-ipv4="node --dns-result-order=ipv4first $(which npm)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

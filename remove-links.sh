@@ -10,6 +10,7 @@ rm_if_link(){
 
 rm_if_link ~/.vimrc
 rm_if_link ~/.bashrc
+rm_if_link ~/.bashrc.d
 rm_if_link ~/.inputrc
 rm_if_link ~/.gitconfig
 rm_if_link ~/.config/nvim

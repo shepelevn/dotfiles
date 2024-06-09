@@ -1,0 +1,26 @@
+# My config
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+set -o vi
+
+# export FCEDIT="nvim --noplugin"
+export VISUAL="nvim -u ~/.vimrc"
+export FCEDIT="nvim -u ~/.vimrc"
+# export VISUAL="vim"
+
+# export MANPAGER="pager --mouse"
+export MANPAGER="less -s"
+
+export PATH="/home/kck/.local/bin:/home/kck/.config/composer/vendor/bin:$PATH"
+
+# Messages at login
+cat ~/todo.txt
+echo
+
+cat ~/code/TODO.md
+
+# Node doesn't work with ipv6
+# alias npm-ipv4="node --dns-result-order=ipv4first $(which npm)"
