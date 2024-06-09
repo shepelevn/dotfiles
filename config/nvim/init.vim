@@ -205,13 +205,16 @@ cmap w!! w !sudo tee > /dev/null %
 "Set colorscheme Windows
 " colorscheme industry
 
+" Set colorscheme Linux
+colorscheme lunaperche
+
 "Set font
 " set guifont=Consolas:h11
 " set guifont=Inconsolata:h13
 " set guifont=Inconsolata\ NFM:h11
 " set guifont=DejaVu\ Sans\ Mono:h10
 " set guifont=FiraMono\ Nerd\ Font\ Mono:h11
-set guifont=Hack\ Nerd\ Font\ Mono:h10
+set guifont=Hack\ Nerd\ Font\ Mono:h13
 " set guifont=DejaVuSansM\ Nerd\ Font\ Mono:h10
 
 " Set slash for filenames for windows
@@ -425,6 +428,7 @@ let g:indentLine_char_list = ['|', '¦', '|', '¦']
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui  = '#A4E57E'
 nmap <M-l><M-i> :IndentLinesToggle<CR>
+let g:indentLine_setConceal = 0
 
 Plug 'tpope/vim-commentary'
 
@@ -562,6 +566,8 @@ highlight ConflictMarkerTheirs guibg=#344f69
 highlight ConflictMarkerEnd guibg=#2f628e
 highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 "------------------------------------------------------------
 " " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -646,3 +652,22 @@ augroup syntax_extensions
   au!
   autocmd BufNewFile,BufRead *.env.local  set syntax=sh
 augroup END
+
+" TreeSitter config
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      ["foo.bar"] = "Identifier",
+    },
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
