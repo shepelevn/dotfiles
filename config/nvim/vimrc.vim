@@ -193,7 +193,9 @@ let @n = 'xi&nbsp;'
 
 " Abbreviations
 " Linux 
-ca vrc ~/.config/nvim/init.vim
+ca initvim ~/.config/nvim/init.vim
+ca initlua ~/.config/nvim/init.lua
+ca vrc ~/.config/nvim/vimrc.vim
 ca gvrc ~/.config/nvim/ginit.vim
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
@@ -496,27 +498,31 @@ au BufWritePost *.php silent! call PhpCsFixerFixDirectory()
 " Plugin for xdebug
 Plug 'vim-vdebug/vdebug'
 let g:vdebug_options = {}
-let g:vdebug_options["port"] = 9003
+" let g:vdebug_options["port"] = 9003
 let g:vdebug_options["watch_window_style"] = 'compact'
 let g:vdebug_options["marker_default"] = '*'
 let g:vdebug_options["simplified_status"] =0 
 let g:vdebug_keymap = {
-\    "run" : "<C-F5>",
+\    "run" : "<F5>",
+\    "close" : "<F6>",
 \    "run_to_cursor" : "<F9>",
 \    "step_over" : "<F2>",
 \    "step_into" : "<F3>",
 \    "step_out" : "<F4>",
-\    "close" : "<F6>",
 \    "detach" : "<F7>",
 \    "set_breakpoint" : "<F10>",
 \    "get_context" : "<F11>",
 \    "eval_under_cursor" : "<F12>",
 \    "eval_visual" : "<Leader>e",
 \}
-let g:vdebug_keymap['run'] = '<C-F5>'
-let g:vdebug_keymap['close'] = '<C-F6>'
-let g:vdebug_keymap['run_to_cursor'] = '<C-F9>'
-let g:vdebug_keymap['set_breakpoint'] = '<C-F10>'
+" <C-F5>
+let g:vdebug_keymap['run'] = '<F29>'
+" <C-F6>
+let g:vdebug_keymap['close'] = '<F30>'
+" let g:vdebug_keymap['run_to_cursor'] = '<C-F9>'
+let g:vdebug_keymap['run_to_cursor'] = '<F33>'
+" let g:vdebug_keymap['set_breakpoint'] = '<C-F10>'
+let g:vdebug_keymap['set_breakpoint'] = '<F34>'
 
 " PHP code formatter
 Plug 'hlidotbe/vim-phpcbf'
@@ -538,9 +544,12 @@ Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 " Plug 'tpope/vim-dadbod'
 
 " Layout
-" Plug 'lyokha/vim-xkbswitch'
-" let g:XkbSwitchEnabled = 1
+Plug 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled = 1
 " let g:XkbSwitchIMappings = ['ru']
+let g:XkbSwitchLib = '/usr/local/lib64/libg3kbswitch.so'
+let g:XkbSwitchNLayout = 'us'
+let g:XkbSwitchAssistNKeymap = 1    " for commands r and f
 
 " Possible solution to problem when there is no DISPLAY
 
@@ -652,22 +661,3 @@ augroup syntax_extensions
   au!
   autocmd BufNewFile,BufRead *.env.local  set syntax=sh
 augroup END
-
-" TreeSitter config
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    custom_captures = {
-      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["foo.bar"] = "Identifier",
-    },
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-}
-EOF

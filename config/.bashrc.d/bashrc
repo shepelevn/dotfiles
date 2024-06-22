@@ -17,7 +17,7 @@ export MANPAGER="less -s"
 export PATH="/home/kck/.local/bin:/home/kck/.config/composer/vendor/bin:$PATH"
 
 # Messages at login
-cat ~/todo.txt
+cat ~/TODO.md
 echo
 
 cat ~/code/TODO.md

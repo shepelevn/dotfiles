@@ -11,5 +11,5 @@ MAILTO = shepelevnikolay97@gmail.com
 # 1	5	cron.daily	run-parts --report /etc/cron.daily
 # 7	10	cron.weekly	run-parts --report /etc/cron.weekly
 # @monthly	15	cron.monthly	run-parts --report /etc/cron.monthly
-1 10 save_password ~/my_scripts/backup/passwords/passwords.sh
-1 10 backup.mega ~/my_scripts/backup/rclone_mega/remote_backup.sh
+1 10 backup.mega ~/scripts/backup/cloud-backup/mega-backup.sh
+1 10 backup.google2 ~/scripts/backup/cloud-backup/google2-backup.sh
