@@ -13,5 +13,6 @@
   // "intelephense.environment.phpVersion": "7.4.33",
   "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.diagnostics.undefinedMethods": false,
+  "intelephense.diagnostics.undefinedTypes": false,
   "phpstan.level": "max",
 }

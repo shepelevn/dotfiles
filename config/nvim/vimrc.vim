@@ -190,6 +190,7 @@ let @o = 'ooutline: 1px solid red;'
 let @b = 'obackground-color: 1kbred;'
 let @p = '../../../dist/'
 let @n = 'xi&nbsp;'
+let @l = '80lbhi'
 
 " Abbreviations
 " Linux 
@@ -377,8 +378,6 @@ let g:coc_global_extensions = [
       \ 'coc-phpls',
       \]
 
-" Not added
-
 " coc-eslint
 nnoremap <F9> :CocCommand eslint.executeAutofix<CR>
 
@@ -498,7 +497,7 @@ au BufWritePost *.php silent! call PhpCsFixerFixDirectory()
 " Plugin for xdebug
 Plug 'vim-vdebug/vdebug'
 let g:vdebug_options = {}
-" let g:vdebug_options["port"] = 9003
+let g:vdebug_options["port"] = 9003
 let g:vdebug_options["watch_window_style"] = 'compact'
 let g:vdebug_options["marker_default"] = '*'
 let g:vdebug_options["simplified_status"] =0 
@@ -575,7 +574,14 @@ highlight ConflictMarkerTheirs guibg=#344f69
 highlight ConflictMarkerEnd guibg=#2f628e
 highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'lambdalisue/vim-suda'
+
+Plug 'rhysd/vim-grammarous'
+"vim.g.grammarous_jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
+let g:grammarous#jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
+command Grammar GrammarousCheck
 
 "------------------------------------------------------------
 " " List ends here. Plugins become visible to Vim after this call.
