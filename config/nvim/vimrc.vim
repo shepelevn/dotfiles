@@ -210,6 +210,13 @@ cmap w!! w !sudo tee > /dev/null %
 
 " Set colorscheme Linux
 colorscheme lunaperche
+" colorscheme habamax
+" colorscheme slate
+" colorscheme sorbet
+" colorscheme torte
+" colorscheme vim
+" colorscheme wildcharm
+" colorscheme zaibatsu
 
 "Set font
 " set guifont=Consolas:h11
@@ -353,7 +360,11 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Plug 'eslint/eslint'
 
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
+
+" Fork with temporary fix. The original is above
+Plug 'kmoschcau/emmet-vim'
+
 " Make emmet activate on ,
 " let g:user_emmet_leader_key=','
 let g:user_emmet_leader_key='<C-T>'
@@ -374,9 +385,9 @@ let g:coc_global_extensions = [
       \ 'coc-eslint',
       \ 'coc-diagnostic',
       \ '@yaegassy/coc-phpstan',
-      \ 'coc-markdownlint',
       \ 'coc-phpls',
       \]
+" \ 'coc-markdownlint',
 
 " coc-eslint
 nnoremap <F9> :CocCommand eslint.executeAutofix<CR>
@@ -479,7 +490,7 @@ Plug 'preservim/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
 Plug 'airblade/vim-rooter'
-let g:rooter_patterns = ['.project_directory', '.git', 'node_modules', 'package.json', 'vendor']
+let g:rooter_patterns = ['.project_directory', '.git', 'node_modules', 'package.json', 'composer.json']
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -574,14 +585,17 @@ highlight ConflictMarkerTheirs guibg=#344f69
 highlight ConflictMarkerEnd guibg=#2f628e
 highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
 
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'lambdalisue/vim-suda'
 
 Plug 'rhysd/vim-grammarous'
 "vim.g.grammarous_jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
 let g:grammarous#jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
-command Grammar GrammarousCheck
+" command Grammar GrammarousCheck
+
+Plug 'dbakker/vim-projectroot'
+let g:rootmarkers = ['.projectroot', '.git' ,'.hg' ,'.svn' ,'.bzr' ,'_darcs', 'build.xml', '.project_directory']
 
 "------------------------------------------------------------
 " " List ends here. Plugins become visible to Vim after this call.
@@ -647,7 +661,7 @@ call neomake#configure#automake('nrwi', 500)
 " Markdown
 " Turn off word wrap for Markdown
 autocmd FileType markdown  setlocal textwidth=0
-autocmd FileType markdown setlocal nowrap
+" autocmd FileType markdown setlocal nowrap
 let g:markdown_folding = 0
 let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_conceal=0
@@ -667,3 +681,15 @@ augroup syntax_extensions
   au!
   autocmd BufNewFile,BufRead *.env.local  set syntax=sh
 augroup END
+
+" let g:vdebug_options.path_maps = { "/app": '/home/kck/code/learning/other/algorithms/' }
+
+function! SetupDebug()
+  " let g:vdebug_options['path_maps'] = {'/app': call('projectroot#get', a:000)}
+  " let g:vdebug_options['path_maps'] = {'/app': call('ProjectRootGuess', a:000)}
+  let g:vdebug_options['path_maps'] = {'/var/www/project/': call('ProjectRootGuess', a:000)}
+endfunction
+autocmd VimEnter * :call SetupDebug()
+
+set lazyredraw
+set ttyfast

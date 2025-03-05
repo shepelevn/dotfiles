@@ -24,3 +24,5 @@ cat ~/code/TODO.md
 
 # Node doesn't work with ipv6
 # alias npm-ipv4="node --dns-result-order=ipv4first $(which npm)"
+
+export PATH=$PATH:$HOME/minio-binaries/

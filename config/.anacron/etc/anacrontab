@@ -11,5 +11,9 @@ MAILTO = shepelevnikolay97@gmail.com
 # 1	5	cron.daily	run-parts --report /etc/cron.daily
 # 7	10	cron.weekly	run-parts --report /etc/cron.weekly
 # @monthly	15	cron.monthly	run-parts --report /etc/cron.monthly
-1 10 backup.mega ~/scripts/backup/cloud-backup/mega-backup.sh
-1 10 backup.google2 ~/scripts/backup/cloud-backup/google2-backup.sh
+# 1 10 backup.mega ~/scripts/backup/cloud-backup/mega-backup.sh
+# 1 10 backup.google2 ~/scripts/backup/cloud-backup/google2-backup.sh
+1 10 backup.yandex ~/scripts/backup/cloud-backup/yandex-backup.sh
+1 10 backup.orangepi-ssd ~/scripts/backup/cloud-backup/orangepi-ssd-backup.sh
+3 10 backup.orangepi-usb ~/scripts/backup/cloud-backup/orangepi-usb-backup.sh
+# 1 10 backup.selectel ~/scripts/backup/cloud-backup/selectel-backup.sh
